@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="GenerateQRCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputJsonMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GenerateQRCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GenerateQRCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticationHeader" type="tns:AuthenticationHeader" />
+      <s:complexType name="AuthenticationHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="ValidateQRCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputJsonMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateQRCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateQRCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateQROTP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputJsonMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateQROTPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateQROTPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DispenseCash">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputJsonMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DispenseCashResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DispenseCashResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TxnCancel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputJsonMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TxnCancelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TxnCancelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTransactionStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputJsonMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTransactionStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateTransactionStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GenerateQRCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GenerateQRCode" />
+  </wsdl:message>
+  <wsdl:message name="GenerateQRCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GenerateQRCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GenerateQRCodeAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidateQRCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateQRCode" />
+  </wsdl:message>
+  <wsdl:message name="ValidateQRCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateQRCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateQRCodeAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="ValidateQROTPSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateQROTP" />
+  </wsdl:message>
+  <wsdl:message name="ValidateQROTPSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateQROTPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateQROTPAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DispenseCashSoapIn">
+    <wsdl:part name="parameters" element="tns:DispenseCash" />
+  </wsdl:message>
+  <wsdl:message name="DispenseCashSoapOut">
+    <wsdl:part name="parameters" element="tns:DispenseCashResponse" />
+  </wsdl:message>
+  <wsdl:message name="DispenseCashAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="TxnCancelSoapIn">
+    <wsdl:part name="parameters" element="tns:TxnCancel" />
+  </wsdl:message>
+  <wsdl:message name="TxnCancelSoapOut">
+    <wsdl:part name="parameters" element="tns:TxnCancelResponse" />
+  </wsdl:message>
+  <wsdl:message name="TxnCancelAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTransactionStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionStatus" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTransactionStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTransactionStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTransactionStatusAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:portType name="ContactLessQRCodeWithdrawalServiceSoap">
+    <wsdl:operation name="GenerateQRCode">
+      <wsdl:input message="tns:GenerateQRCodeSoapIn" />
+      <wsdl:output message="tns:GenerateQRCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateQRCode">
+      <wsdl:input message="tns:ValidateQRCodeSoapIn" />
+      <wsdl:output message="tns:ValidateQRCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateQROTP">
+      <wsdl:input message="tns:ValidateQROTPSoapIn" />
+      <wsdl:output message="tns:ValidateQROTPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DispenseCash">
+      <wsdl:input message="tns:DispenseCashSoapIn" />
+      <wsdl:output message="tns:DispenseCashSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TxnCancel">
+      <wsdl:input message="tns:TxnCancelSoapIn" />
+      <wsdl:output message="tns:TxnCancelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatus">
+      <wsdl:input message="tns:UpdateTransactionStatusSoapIn" />
+      <wsdl:output message="tns:UpdateTransactionStatusSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ContactLessQRCodeWithdrawalServiceSoap" type="tns:ContactLessQRCodeWithdrawalServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerateQRCode">
+      <soap:operation soapAction="http://tempuri.org/GenerateQRCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GenerateQRCodeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateQRCode">
+      <soap:operation soapAction="http://tempuri.org/ValidateQRCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateQRCodeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateQROTP">
+      <soap:operation soapAction="http://tempuri.org/ValidateQROTP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ValidateQROTPAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DispenseCash">
+      <soap:operation soapAction="http://tempuri.org/DispenseCash" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DispenseCashAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TxnCancel">
+      <soap:operation soapAction="http://tempuri.org/TxnCancel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:TxnCancelAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatus">
+      <soap:operation soapAction="http://tempuri.org/UpdateTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateTransactionStatusAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ContactLessQRCodeWithdrawalServiceSoap12" type="tns:ContactLessQRCodeWithdrawalServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GenerateQRCode">
+      <soap12:operation soapAction="http://tempuri.org/GenerateQRCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GenerateQRCodeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateQRCode">
+      <soap12:operation soapAction="http://tempuri.org/ValidateQRCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateQRCodeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateQROTP">
+      <soap12:operation soapAction="http://tempuri.org/ValidateQROTP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ValidateQROTPAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DispenseCash">
+      <soap12:operation soapAction="http://tempuri.org/DispenseCash" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DispenseCashAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TxnCancel">
+      <soap12:operation soapAction="http://tempuri.org/TxnCancel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:TxnCancelAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTransactionStatus">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTransactionStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateTransactionStatusAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ContactLessQRCodeWithdrawalService">
+    <wsdl:port name="ContactLessQRCodeWithdrawalServiceSoap" binding="tns:ContactLessQRCodeWithdrawalServiceSoap">
+      <soap:address location="http://localhost/CCWGenerateCode/ContactLessQRCodeWithdrawalService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ContactLessQRCodeWithdrawalServiceSoap12" binding="tns:ContactLessQRCodeWithdrawalServiceSoap12">
+      <soap12:address location="http://localhost/CCWGenerateCode/ContactLessQRCodeWithdrawalService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

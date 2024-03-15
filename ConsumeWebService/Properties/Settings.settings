@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ConsumeWebService.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConsumeWebService_localhost_ContactLessQRCodeWithdrawalService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/CCWGenerateCode/ContactLessQRCodeWithdrawalService.asmx</Value>
+    </Setting>
+    <Setting Name="ConsumeWebService_localhost1_CCWQRCodeValidation" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost/ValidateCode/CCWQRCodeValidation.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

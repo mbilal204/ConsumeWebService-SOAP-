@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="IsQRCodeValidated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputJsonMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsQRCodeValidatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsQRCodeValidatedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AuthenticationHeader" type="tns:AuthenticationHeader" />
+      <s:complexType name="AuthenticationHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="IsOTPAndAmountValidated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InputJsonMessage" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsOTPAndAmountValidatedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsOTPAndAmountValidatedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="IsQRCodeValidatedSoapIn">
+    <wsdl:part name="parameters" element="tns:IsQRCodeValidated" />
+  </wsdl:message>
+  <wsdl:message name="IsQRCodeValidatedSoapOut">
+    <wsdl:part name="parameters" element="tns:IsQRCodeValidatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsQRCodeValidatedAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="IsOTPAndAmountValidatedSoapIn">
+    <wsdl:part name="parameters" element="tns:IsOTPAndAmountValidated" />
+  </wsdl:message>
+  <wsdl:message name="IsOTPAndAmountValidatedSoapOut">
+    <wsdl:part name="parameters" element="tns:IsOTPAndAmountValidatedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsOTPAndAmountValidatedAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:portType name="CCWQRCodeValidationSoap">
+    <wsdl:operation name="IsQRCodeValidated">
+      <wsdl:input message="tns:IsQRCodeValidatedSoapIn" />
+      <wsdl:output message="tns:IsQRCodeValidatedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsOTPAndAmountValidated">
+      <wsdl:input message="tns:IsOTPAndAmountValidatedSoapIn" />
+      <wsdl:output message="tns:IsOTPAndAmountValidatedSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CCWQRCodeValidationSoap" type="tns:CCWQRCodeValidationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsQRCodeValidated">
+      <soap:operation soapAction="http://tempuri.org/IsQRCodeValidated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsQRCodeValidatedAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsOTPAndAmountValidated">
+      <soap:operation soapAction="http://tempuri.org/IsOTPAndAmountValidated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:IsOTPAndAmountValidatedAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CCWQRCodeValidationSoap12" type="tns:CCWQRCodeValidationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsQRCodeValidated">
+      <soap12:operation soapAction="http://tempuri.org/IsQRCodeValidated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IsQRCodeValidatedAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsOTPAndAmountValidated">
+      <soap12:operation soapAction="http://tempuri.org/IsOTPAndAmountValidated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:IsOTPAndAmountValidatedAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CCWQRCodeValidation">
+    <wsdl:port name="CCWQRCodeValidationSoap" binding="tns:CCWQRCodeValidationSoap">
+      <soap:address location="http://localhost/ValidateCode/CCWQRCodeValidation.asmx" />
+    </wsdl:port>
+    <wsdl:port name="CCWQRCodeValidationSoap12" binding="tns:CCWQRCodeValidationSoap12">
+      <soap12:address location="http://localhost/ValidateCode/CCWQRCodeValidation.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
